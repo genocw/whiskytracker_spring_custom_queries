@@ -23,5 +23,9 @@ public class DistilleryController {
         return distilleryRepository.findAll();
     }
 
+    @GetMapping(value = "/{region}")
+    public List<Distillery> getAllDistilleriesFromRegion(@PathVariable String region) {
+        return distilleryRepository.findAllDistilleriesFromRegion(region);
+    }
 
 }
