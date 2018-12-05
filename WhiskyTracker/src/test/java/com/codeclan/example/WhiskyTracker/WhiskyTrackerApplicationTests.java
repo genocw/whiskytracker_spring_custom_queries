@@ -31,4 +31,6 @@ public class WhiskyTrackerApplicationTests {
 		List<Whisky> results = whiskyRepository.findAllWhiskiesForYear(2018);
 	}
 
+
+
 }

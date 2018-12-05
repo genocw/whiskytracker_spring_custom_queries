@@ -10,4 +10,6 @@ public interface WhiskyRepositoryCustom {
 
     List<Whisky> findAllWhiskiesForYear(int year);
 
+    List<Whisky> findAllWhiskiesFromRegion(String region);
+
 }
