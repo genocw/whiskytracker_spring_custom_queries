@@ -37,4 +37,9 @@ public class WhiskyTrackerApplicationTests {
 		List<Distillery> results = distilleryRepository.findAllDistilleriesFromRegion("Speyside");
 	}
 
+	@Test
+	public void canFindAllWhiskiesFromGlendronachDistilleryOfAge15() {
+		List<Whisky> results = whiskyRepository.findAllWhiskiesFromDistilleryOFAge("Glendronach", 15);
+	}
+
 }

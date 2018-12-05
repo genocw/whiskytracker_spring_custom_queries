@@ -48,4 +48,22 @@ public class WhiskyRepositoryImpl implements WhiskyRepositoryCustom {
         return results;
 
     }
+
+//    get all the whisky from a particular distillery that's a specific age (if the whisky has a specific age)
+    @Transactional
+    public List<Whisky> findAllWhiskiesFromDistilleryOFAge(String distilleryName, int age) {
+
+        List<Whisky> results = null;
+
+        Session session = entityManager.unwrap(Session.class);
+        Criteria cr = session.createCriteria(Whisky.class);
+        cr.createAlias("distillery", "distillery");
+        cr.add(Restrictions.eq("distillery.name", distilleryName));
+        cr.add(Restrictions.eq("age", age));
+        results = cr.list();
+
+        return results;
+
+    }
+
 }
