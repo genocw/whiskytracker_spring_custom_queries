@@ -30,4 +30,19 @@ public class DistilleryRepositoryImpl implements DistilleryRepositoryCustom {
         return results;
 
     }
+
+//    Get distilleries that have whiskies that are 12 years old
+    @Transactional
+    public List<Distillery> findAllDistilleriesWithWhiskiesOfAge(int age) {
+
+        List<Distillery> results;
+
+        Session session = entityManager.unwrap(Session.class);
+        Criteria cr = session.createCriteria(Distillery.class);
+        cr.createAlias("whiskies", "whisky");
+        cr.add(Restrictions.eq("whisky.age", age));
+        results = cr.list();
+
+        return results;
+    }
 }

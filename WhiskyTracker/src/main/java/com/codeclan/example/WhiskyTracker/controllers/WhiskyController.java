@@ -23,12 +23,12 @@ public class WhiskyController {
         return whiskyRepository.findAll();
     }
 
-    @GetMapping(value = "/{year}")
+    @GetMapping(value = "/year/{year}")
     public List<Whisky> findAllWhiskiesForYear(@PathVariable int year) {
         return whiskyRepository.findAllWhiskiesForYear(year);
     }
 
-    @GetMapping(value = "/{region}")
+    @GetMapping(value = "/region/{region}")
     public List<Whisky> findAllWhiskiesFromRegion(@PathVariable String region) {
         return whiskyRepository.findAllWhiskiesFromRegion(region);
     }

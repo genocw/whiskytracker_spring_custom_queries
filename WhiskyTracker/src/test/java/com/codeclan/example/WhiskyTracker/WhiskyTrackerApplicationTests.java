@@ -42,4 +42,9 @@ public class WhiskyTrackerApplicationTests {
 		List<Whisky> results = whiskyRepository.findAllWhiskiesFromDistilleryOFAge("Glendronach", 15);
 	}
 
+	@Test
+	public void	canFindAllDistilleriesWithWhiskiesOfAge12() {
+		List<Distillery> results = distilleryRepository.findAllDistilleriesWithWhiskiesOfAge(12);
+	}
+
 }
